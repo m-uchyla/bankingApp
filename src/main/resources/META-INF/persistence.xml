@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="BankingPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.driver"
+                      value="org.h2.Driver" />
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:h2:file:C:\\Users\\user\\data\\H2DB;" />
+
+            <property name="javax.persistence.jdbc.user" value="admin" />
+            <property name="javax.persistence.jdbc.password" value="admin" />
+
+            <!-- Telling Hibernate which language we want it to talk to the DB  -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+
+            <!-- Possible values: drop-and-create, create, drop, none, update -->
+            <property
+                    name="javax.persistence.schema-generation.database.action" value="update" />
+
+            <!-- Shows the jdbc SQL in the console -->
+            <property name="hibernate.format_sql" value="false" />
+            <property name="hibernate.use_sql_comments" value="false" />
+            <property name = "hibernate.show_sql" value = "false" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
